@@ -1,0 +1,70 @@
+/* === Universal Styles === */
+.transition-all-300 { 
+    transition: all 0.3s ease-in-out; 
+}
+.text-shadow { 
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6); 
+}
+.dark body {
+    background-image: radial-gradient(
+        circle 600px at var(--mouse-x) var(--mouse-y),
+        rgba(60, 131, 246, 0.15),
+        transparent 80%
+    );
+}
+
+/* === Homepage Features === */
+#hero .relative { 
+    z-index: 1; 
+}
+.tilt-card { 
+    transform-style: preserve-3d; 
+    transform: perspective(1000px); 
+}
+.reqs-content {
+    transition: max-height 0.4s ease-out;
+    max-height: 0;
+    overflow: hidden;
+}
+.reqs-content.open {
+    max-height: 200px;
+}
+
+/* === Contact Page Feature === */
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 25px rgba(59, 130, 246, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(59, 130, 246, 0.3);
+    }
+}
+.contact-card-glow {
+    animation: pulse-glow 5s infinite ease-in-out;
+}
+.dark .contact-card-glow {
+    animation: none;
+}
+
+/* === Plans Page Feature === */
+.tab-btn {
+    color: #6b7280; /* gray-500 */
+    border-color: transparent;
+}
+.tab-btn:hover {
+    color: #3b82f6; /* primary-500 */
+}
+.dark .tab-btn {
+    color: #9ca3af; /* gray-400 */
+}
+.dark .tab-btn:hover {
+    color: #60a5fa; /* primary-400 */
+}
+.tab-btn.active {
+    color: #2563eb; /* primary-600 */
+    border-bottom-color: #2563eb; /* primary-600 */
+}
+.dark .tab-btn.active {
+    color: #60a5fa; /* primary-400 */
+    border-bottom-color: #60a5fa; /* primary-400 */
+}
