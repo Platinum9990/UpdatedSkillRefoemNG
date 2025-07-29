@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="light scroll-smooth">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Plans & Pricing - SkillReformNG</title>
+    <title>Find Trainings - SkillReformNG</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], },
                     colors: {
                         primary: { '50': '#eff6ff', '100': '#dbeafe', '200': '#bfdbfe', '300': '#93c5fd', '400': '#60a5fa', '500': '#3b82f6', '600': '#2563eb', '700': '#1d4ed8', '800': '#1e40af', '900': '#1e3a8a', '950': '#172554' },
                         secondary: { '50': '#f0fdf4', '100': '#dcfce7', '200': '#bbf7d0', '300': '#86efac', '400': '#4ade80', '500': '#22c55e', '600': '#16a34a', '700': '#15803d', '800': '#166534', '900': '#14532d', '950': '#052e16' },
@@ -22,11 +21,11 @@
             }
         }
     </script>
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-50 text-gray-800 dark:bg-primary-950 dark:text-gray-300 transition-colors duration-300">
@@ -39,11 +38,12 @@
                     <span class="text-primary-600 dark:text-primary-400">Skill<span class="text-gray-800 dark:text-white">Reform</span><span class="text-gray-400">NG</span></span>
                 </a>
                 <nav class="hidden md:flex items-center space-x-6">
-                    <a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-all-300">Home</a>
-                    <a href="about.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-all-300">About</a>
-                    <a href="contact.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-all-300">Contact Us</a>
-                    <a href="/plans and pricing.html" class="text-primary-600 dark:text-primary-400 font-semibold">Plans</a>
-                     <div class="relative border-l dark:border-gray-700 pl-4">
+                    <a href="index.html" class="block text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2">Home</a>
+                    <a href="about us.html" class="block text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2">About Us</a>
+                    <a href="contact.html" class="block text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2">Contact Us</a>
+                    <a href="find-trainings.html" class="block text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2">Find Trainings</a>
+                    <a href="/plans and pricing.html" class="block text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2">Plans & Pricing</a>
+                    <div class="relative border-l dark:border-gray-700 pl-4">
                         <select id="lang-switcher" class="bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-300 text-sm rounded-full focus:ring-primary-500 focus:border-primary-500 block w-full pl-4 pr-10 py-2 appearance-none">
                             <option selected value="en">English</option>
                             <option value="yo">Yoruba</option>
@@ -58,6 +58,7 @@
                         <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
                         <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 5.05A1 1 0 003.636 6.464l.707.707a1 1 0 001.414-1.414l-.707-.707zM3 11a1 1 0 100-2H2a1 1 0 100 2h1zM6.464 16.364l.707-.707a1 1 0 011.414 1.414l-.707.707a1 1 0 01-1.414-1.414z"></path></svg>
                     </button>
+                    <a href="contact.html" class="bg-secondary-600 hover:bg-secondary-700 text-white px-5 py-2.5 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all-300 transform hover:-translate-y-0.5">List a Training</a>
                 </nav>
                 <div class="md:hidden">
                     <button id="mobile-menu-button" class="text-gray-600 dark:text-gray-300 focus:outline-none">
@@ -66,138 +67,293 @@
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 dark:border-primary-800">
-             </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 dark:border-primary-800"></div>
     </header>
 
     <main class="pt-24">
-        <section class="bg-primary-600 dark:bg-primary-900/50">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
-                <h1 class="text-4xl md:text-5xl font-extrabold text-white" data-aos="fade-up">Plans & Services</h1>
-                <p class="mt-4 max-w-2xl mx-auto text-lg text-primary-200" data-aos="fade-up" data-aos-delay="100">Choose the best option to amplify your impact and reach motivated learners across Nigeria.</p>
-            </div>
-        </section>
-
-        <section class="py-24">
+        <section class="py-20">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="max-w-2xl mx-auto mb-12" data-aos="fade-up">
-                    <div class="border-b border-gray-200 dark:border-gray-700">
-                        <nav class="-mb-px flex justify-center space-x-8" aria-label="Tabs">
-                            <button id="tab-trainers" class="tab-btn active whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg">For Trainers</button>
-                            <button id="tab-orgs" class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg">For Organizations</button>
-                        </nav>
-                    </div>
+                <div class="text-center" data-aos="fade-up">
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white">Find Your Next Training</h1>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-300">Search and filter through our verified list of skill empowerment opportunities across Nigeria.</p>
                 </div>
 
-                <div id="plans-trainers">
-                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-                        <div class="tilt-card bg-white dark:bg-primary-900/30 dark:border dark:border-primary-800 rounded-2xl shadow-lg p-8 flex flex-col" data-aos="fade-up" data-aos-delay="100" data-tilt>
-                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Basic Listing</h3>
-                            <p class="mt-2 text-gray-600 dark:text-gray-300">Get your training in front of our audience.</p>
-                            <p class="mt-6 text-4xl font-extrabold text-gray-900 dark:text-white">Free</p>
-                            <ul class="mt-6 space-y-4 text-gray-600 dark:text-gray-300 flex-grow">
-                                <li class="flex items-center space-x-3"><span>&#10003;</span><span>Verified Listing in Directory</span></li>
-                                <li class="flex items-center space-x-3"><span>&#10003;</span><span>Standard Visibility</span></li>
-                            </ul>
-                            <a href="contact.html" class="mt-8 block w-full text-center font-bold bg-gray-200 dark:bg-primary-800 hover:bg-gray-300 dark:hover:bg-primary-700 text-gray-800 dark:text-white px-6 py-3 rounded-lg transition-all-300">Get Started</a>
-                        </div>
-                        <div class="tilt-card relative bg-white dark:bg-primary-900/30 rounded-2xl shadow-lg p-8 flex flex-col ring-2 ring-primary-600" data-aos="fade-up" data-aos-delay="200" data-tilt>
-                             <p class="absolute top-0 -translate-y-1/2 bg-primary-600 text-white px-4 py-1 rounded-full font-semibold self-center">Best Value</p>
-                            <h3 class="text-2xl font-bold text-primary-600 dark:text-primary-400">Premium Subscription</h3>
-                            <p class="mt-2 text-gray-600 dark:text-gray-300">Maximize your reach and get noticed.</p>
-                            <div class="mt-6">
-                                <p class="text-4xl font-extrabold text-gray-900 dark:text-white">₦50,000 <span class="text-base font-medium text-gray-500">/ month</span></p>
-                                <p class="text-sm text-gray-500 mt-1">or ₦500,000 / year (Save 2 months!)</p>
+                <div class="max-w-4xl mx-auto bg-white dark:bg-primary-900/50 p-6 rounded-xl shadow-md border dark:border-primary-800 my-12" data-aos="fade-up" data-aos-delay="100">
+                    <form id="search-form">
+                        <div class="space-y-4">
+                            <div>
+                                <label for="search-input" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Search by Title or Organizer</label>
+                                <div class="flex gap-2">
+                                    <input type="text" id="search-input" name="search-input" placeholder="e.g., Digital Marketing, Wootlab..." class="block w-full px-4 py-3 border border-gray-300 dark:border-primary-700 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-primary-900">
+                                    <button type="submit" class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-md font-semibold shadow transition-all-300">Search</button>
+                                </div>
                             </div>
-                            <ul class="mt-6 space-y-4 text-gray-600 dark:text-gray-300 flex-grow">
-                                <li class="flex items-center space-x-3"><span>&#10003;</span><span>All Basic Features</span></li>
-                                <li class="flex items-center space-x-3"><span>&#10003;</span><span class="font-semibold text-primary-600 dark:text-primary-400">Homepage Feature</span></li>
-                                <li class="flex items-center space-x-3"><span>&#10003;</span><span>Social Media Promotion</span></li>
-                                <li class="flex items-center space-x-3"><span>&#10003;</span><span>"Verified Partner" Badge</span></li>
-                            </ul>
-                            <a href="contact.html" class="mt-8 block w-full text-center font-bold bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg transition-all-300">Choose Premium</a>
+                            <div class="grid sm:grid-cols-2 gap-4 pt-4 border-t dark:border-gray-700">
+                                <!-- Category Filters -->
+                                <div class="p-4 bg-gray-100 dark:bg-primary-900 rounded-lg shadow-sm">
+                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Category</label>
+                                    <div id="category-filters" class="flex flex-wrap gap-2">
+                                        <button type="button" class="filter-btn active bg-primary-100 dark:bg-primary-800 text-primary-700 dark:text-primary-300 px-4 py-2 rounded-full text-sm font-medium hover:bg-primary-200 dark:hover:bg-primary-700">All</button>
+                                        <button type="button" class="filter-btn bg-gray-200 dark:bg-primary-800 text-gray-800 dark:text-gray-300 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-300 dark:hover:bg-primary-700">Technical</button>
+                                        <button type="button" class="filter-btn bg-gray-200 dark:bg-primary-800 text-gray-800 dark:text-gray-300 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-300 dark:hover:bg-primary-700">Vocational</button>
+                                        <button type="button" class="filter-btn bg-gray-200 dark:bg-primary-800 text-gray-800 dark:text-gray-300 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-300 dark:hover:bg-primary-700">Creative</button>
+                                    </div>
+                                </div>
+                                <!-- Cost Filters -->
+                                <div class="p-4 bg-gray-100 dark:bg-primary-900 rounded-lg shadow-sm">
+                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Cost</label>
+                                    <div id="cost-filters" class="flex flex-wrap gap-2">
+                                        <button type="button" class="filter-btn active bg-primary-100 dark:bg-primary-800 text-primary-700 dark:text-primary-300 px-4 py-2 rounded-full text-sm font-medium hover:bg-primary-200 dark:hover:bg-primary-700">All</button>
+                                        <button type="button" class="filter-btn bg-gray-200 dark:bg-primary-800 text-gray-800 dark:text-gray-300 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-300 dark:hover:bg-primary-700">Free</button>
+                                        <button type="button" class="filter-btn bg-gray-200 dark:bg-primary-800 text-gray-800 dark:text-gray-300 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-300 dark:hover:bg-primary-700">Paid</button>
+                                    </div>
+                                </div>
+                                <!-- Single Date Picker -->
+                                <div>
+                                    <label for="date-range" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Date</label>
+                                    <input type="date" id="date-range" name="date-range" class="block w-full px-4 py-3 border border-gray-300 dark:border-primary-700 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-primary-900">
+                                </div>
+                            </div>
                         </div>
-                         <div class="tilt-card bg-white dark:bg-primary-900/30 dark:border dark:border-primary-800 rounded-2xl shadow-lg p-8 flex flex-col" data-aos="fade-up" data-aos-delay="300" data-tilt>
-                            <h3 class="text-2xl font-bold text-secondary-700 dark:text-secondary-400">Single Boost</h3>
-                            <p class="mt-2 text-gray-600 dark:text-gray-300">Feature a single training listing.</p>
-                            <p class="mt-6 text-4xl font-extrabold text-gray-900 dark:text-white">₦10,000 <span class="text-base font-medium text-gray-500">/ training</span></p>
-                            <ul class="mt-6 space-y-4 text-gray-600 dark:text-gray-300 flex-grow">
-                                <li class="flex items-center space-x-3"><span>&#10003;</span><span>Includes Basic Listing features</span></li>
-                                <li class="flex items-center space-x-3"><span>&#10003;</span><span class="font-semibold text-secondary-600 dark:text-secondary-400">Featured on Homepage</span></li>
-                            </ul>
-                            <a href="contact.html" class="mt-8 block w-full text-center font-bold bg-secondary-600 hover:bg-secondary-700 text-white px-6 py-3 rounded-lg transition-all-300">Boost Training</a>
-                        </div>
-                    </div>
+                    </form>
                 </div>
 
-                <div id="plans-orgs" class="hidden">
-                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-                        <div class="tilt-card bg-white dark:bg-primary-900/30 dark:border dark:border-primary-800 rounded-2xl shadow-lg p-8 flex flex-col" data-aos="fade-up" data-aos-delay="100" data-tilt>
-                            <h3 class="text-2xl font-bold text-primary-600 dark:text-primary-400">Featured Program</h3>
-                            <p class="mt-2 text-gray-600 dark:text-gray-300">Promote your organization's flagship program.</p>
-                            <p class="mt-6 text-4xl font-extrabold text-gray-900 dark:text-white">₦25,000</p>
-                             <ul class="mt-6 space-y-4 text-gray-600 dark:text-gray-300 flex-grow">
-                                <li class="flex items-center space-x-3"><span>&#10003;</span><span>Homepage Feature for 30 Days</span></li>
-                                <li class="flex items-center space-x-3"><span>&#10003;</span><span>Social Media Promotion</span></li>
-                                <li class="flex items-center space-x-3"><span>&#10003;</span><span>Highlighted in Search Results</span></li>
-                            </ul>
-                            <a href="contact.html" class="mt-8 block w-full text-center font-bold bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg transition-all-300">Feature Program</a>
-                        </div>
-                        <div class="tilt-card bg-white dark:bg-primary-900/30 dark:border dark:border-primary-800 rounded-2xl shadow-lg p-8 flex flex-col" data-aos="fade-up" data-aos-delay="200" data-tilt>
-                            <h3 class="text-2xl font-bold text-secondary-700 dark:text-secondary-400">Custom Promotion</h3>
-                            <p class="mt-2 text-gray-600 dark:text-gray-300 flex-grow">Amplify the reach of your initiatives with our targeted promotion packages.</p>
-                            <p class="mt-6 text-2xl font-bold text-gray-900 dark:text-white">Packages Available</p>
-                            <a href="contact.html" class="mt-8 block w-full text-center font-bold bg-secondary-600 hover:bg-secondary-700 text-white px-6 py-3 rounded-lg transition-all-300">Request Info</a>
-                        </div>
-                        <div class="tilt-card bg-white dark:bg-primary-900/30 dark:border dark:border-primary-800 rounded-2xl shadow-lg p-8 flex flex-col" data-aos="fade-up" data-aos-delay="300" data-tilt>
-                            <h3 class="text-2xl font-bold text-tertiary-700 dark:text-tertiary-400">Find Volunteers</h3>
-                            <p class="mt-2 text-gray-600 dark:text-gray-300 flex-grow">Need skilled hands for your project? We connect organizations with verified, passionate volunteers.</p>
-                             <p class="mt-6 text-2xl font-bold text-gray-900 dark:text-white">Fee Per Placement</p>
-                             <a href="contact.html" class="mt-8 block w-full text-center font-bold bg-tertiary-600 hover:bg-tertiary-700 text-white px-6 py-3 rounded-lg transition-all-300">Submit Request</a>
-                        </div>
+                <div id="training-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Training Card 1 -->
+    <div data-aos="zoom-in-up" data-aos-delay="100" class="tilt-card training-card bg-white dark:bg-primary-900/50 rounded-xl overflow-hidden shadow-lg dark:border dark:border-primary-800 group flex flex-col" data-tilt data-cost="Free" data-category="Technical">
+        <img src="https://images.unsplash.com/photo-1599658880436-c61792e70672?q=80&w=2070&auto=format&fit=crop" alt="Woman learning to code" class="w-full h-48 object-cover">
+        <!-- Skill Type Badge -->
+        <span class="inline-block bg-primary-100 text-primary-700 dark:bg-primary-800 dark:text-primary-300 text-xs font-semibold rounded-full px-3 py-1 mt-3 ml-4 w-max">Technical</span>
+        <div class="p-6 flex flex-col flex-grow">
+            <p class="text-sm font-medium text-primary-600 dark:text-primary-400 uppercase tracking-wider mb-1">Wootlab Foundation & Microsoft</p>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Digital Skills Nigeria (DSN)</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Gain free, certified skills with this initiative designed to boost digital economy careers.</p>
+            <div class="flex-grow"></div>
+            <div>
+                <button class="reqs-toggle-btn w-full text-sm text-primary-600 dark:text-primary-400 font-semibold text-left hover:underline mb-2">View Requirements</button>
+                <div class="reqs-content hidden">
+                    <ul class="list-disc list-inside text-sm text-gray-600 dark:text-gray-400 mt-2 space-y-1 pl-1">
+                        <li>Must be a Nigerian citizen.</li>
+                        <li>Age 18-35.</li>
+                        <li>Graduate</li>
+                        <li>Basic computer literacy.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-4 border-t border-gray-200 dark:border-primary-800 mt-4">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">Location</p>
+                        <p class="font-semibold text-gray-800 dark:text-gray-200">Lagos, NG</p>
                     </div>
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">Deadline</p>
+                        <p class="font-semibold text-gray-800 dark:text-gray-200">Aug 31, 2025</p>
+                    </div>
+                </div>
+                <a href="#" class="block w-full text-center font-bold bg-primary-600 hover:bg-primary-700 text-white px-5 py-3 rounded-lg transition-all-300 text-sm mt-2">Apply Now</a>
+            </div>
+        </div>
+    </div>
+    <!-- Training Card 2 -->
+    <div data-aos="zoom-in-up" data-aos-delay="200" class="tilt-card training-card bg-white dark:bg-primary-900/50 rounded-xl overflow-hidden shadow-lg dark:border dark:border-primary-800 group flex flex-col" data-tilt data-cost="Free" data-category="Vocational">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Federal_Ministry_of_Education_Nigeria_logo.png" alt="Federal Ministry of Education Logo" class="w-full h-48 object-contain bg-white p-4">
+        <!-- Skill Type Badge -->
+        <span class="inline-block bg-secondary-100 text-secondary-700 dark:bg-secondary-800 dark:text-secondary-300 text-xs font-semibold rounded-full px-3 py-1 mt-3 ml-4 w-max">Vocational</span>
+        <div class="p-6 flex flex-col flex-grow">
+            <p class="text-sm font-medium text-secondary-600 dark:text-secondary-400 uppercase tracking-wider mb-1">Federal Ministry of Education</p>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">FME TVET Initiative</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Access tuition-free vocational training in trades like fashion, welding, and solar installation.</p>
+            <div class="flex-grow"></div>
+            <div>
+                <button class="reqs-toggle-btn w-full text-sm text-green-600 dark:text-green-400 font-semibold text-left hover:underline mb-2">View Requirements</button>
+                <div class="reqs-content hidden">
+                    <ul class="list-disc list-inside text-sm text-gray-600 dark:text-gray-400 mt-2 space-y-1 pl-1">
+                        <li>Must be between 16-40 years old.</li>
+                        <li>Proof of Nigerian citizenship required.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-4 border-t border-gray-200 dark:border-primary-800 mt-4">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">Location</p>
+                        <p class="font-semibold text-gray-800 dark:text-gray-200">Abuja, NG</p>
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">Deadline</p>
+                        <p class="font-semibold text-gray-800 dark:text-gray-200">Ongoing</p>
+                    </div>
+                </div>
+                <a href="#" class="block w-full text-center font-bold bg-secondary-600 hover:bg-secondary-700 text-white px-5 py-3 rounded-lg transition-all-300 text-sm mt-2">Apply Now</a>
+            </div>
+        </div>
+    </div>
+    <!-- Training Card 3 -->
+    <div data-aos="zoom-in-up" data-aos-delay="300" class="tilt-card training-card bg-white dark:bg-primary-900/50 rounded-xl overflow-hidden shadow-lg dark:border dark:border-primary-800 group flex flex-col" data-tilt data-cost="Free" data-category="Creative">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?q=80&w=2070&auto=format&fit=crop" alt="Photography" class="w-full h-48 object-cover">
+        <!-- Skill Type Badge -->
+        <span class="inline-block bg-tertiary-100 text-tertiary-700 dark:bg-tertiary-800 dark:text-tertiary-300 text-xs font-semibold rounded-full px-3 py-1 mt-3 ml-4 w-max">Creative</span>
+        <div class="p-6 flex flex-col flex-grow">
+            <p class="text-sm font-medium text-tertiary-600 dark:text-tertiary-400 uppercase tracking-wider mb-1">Abuja Creatives</p>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Photography Essentials</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Learn the basics of photography and start capturing stunning images.</p>
+            <div class="flex-grow"></div>
+            <div>
+                <button class="reqs-toggle-btn w-full text-sm text-tertiary-600 dark:text-tertiary-400 font-semibold text-left hover:underline mb-2">View Requirements</button>
+                <div class="reqs-content hidden">
+                    <ul class="list-disc list-inside text-sm text-gray-600 dark:text-gray-400 mt-2 space-y-1 pl-1">
+                        <li>Own a camera or smartphone</li>
+                        <li>Interest in photography</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-4 border-t border-gray-200 dark:border-primary-800 mt-4">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">Location</p>
+                        <p class="font-semibold text-gray-800 dark:text-gray-200">Port Harcourt, NG</p>
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">Deadline</p>
+                        <p class="font-semibold text-gray-800 dark:text-gray-200">Feb 28, 2025</p>
+                    </div>
+                </div>
+                <a href="#" class="block w-full text-center font-bold bg-tertiary-600 hover:bg-tertiary-700 text-white px-5 py-3 rounded-lg transition-all-300 text-sm mt-2">Apply Now</a>
+            </div>
+        </div>
+    </div>
+    <!-- Training Card 4 -->
+    <div data-aos="zoom-in-up" data-aos-delay="400" class="tilt-card training-card bg-white dark:bg-primary-900/50 rounded-xl overflow-hidden shadow-lg dark:border dark:border-primary-800 group flex flex-col" data-tilt data-cost="Paid" data-category="Vocational">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070&auto=format&fit=crop" alt="Culinary Training" class="w-full h-48 object-cover">
+        <!-- Skill Type Badge -->
+        <span class="inline-block bg-secondary-100 text-secondary-700 dark:bg-secondary-800 dark:text-secondary-300 text-xs font-semibold rounded-full px-3 py-1 mt-3 ml-4 w-max">Vocational</span>
+        <div class="p-6 flex flex-col flex-grow">
+            <p class="text-sm font-medium text-green-600 dark:text-green-400 uppercase tracking-wider mb-1">Naija Chefs Academy</p>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Culinary Skills for Beginners</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Kickstart your culinary journey with hands-on cooking classes and mentorship.</p>
+            <div class="flex-grow"></div>
+            <div>
+                 <button class="reqs-toggle-btn w-full text-sm text-green-600 dark:text-green-400 font-semibold text-left hover:underline mb-2">View Requirements</button>
+                <div class="reqs-content hidden">
+                    <ul class="list-disc list-inside text-sm text-gray-600 dark:text-gray-400 mt-2 space-y-1 pl-1">
+                        <li>Passion for cooking</li>
+                        <li>Must be 16 years or older</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-4 border-t border-gray-200 dark:border-primary-800 mt-4">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">Location</p>
+                        <p class="font-semibold text-gray-800 dark:text-gray-200">Ibadan, NG</p>
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">Deadline</p>
+                        <p class="font-semibold text-gray-800 dark:text-gray-200">Mar 15, 2025</p>
+                    </div>
+                </div>
+                <a href="#" class="block w-full text-center font-bold bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-lg transition-all-300 text-sm mt-2">Apply Now</a>
+            </div>
+        </div>
+    </div>
+    <!-- Training Card 5 -->
+    <div data-aos="zoom-in-up" data-aos-delay="500" class="tilt-card training-card bg-white dark:bg-primary-900/50 rounded-xl overflow-hidden shadow-lg dark:border dark:border-primary-800 group flex flex-col" data-tilt data-cost="Paid" data-category="Technical">
+        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=2070&auto=format&fit=crop" alt="Coding Bootcamp" class="w-full h-48 object-cover">
+        <!-- Skill Type Badge -->
+        <span class="inline-block bg-primary-100 text-primary-700 dark:bg-primary-800 dark:text-primary-300 text-xs font-semibold rounded-full px-3 py-1 mt-3 ml-4 w-max">Technical</span>
+        <div class="p-6 flex flex-col flex-grow">
+            <p class="text-sm font-medium text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-1">Code4Africa</p>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Frontend Web Development Bootcamp</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Learn HTML, CSS, and JavaScript from scratch and build real-world projects.</p>
+            <div class="flex-grow"></div>
+            <div>
+                  <button class="reqs-toggle-btn w-full text-sm text-blue-600 dark:text-blue-400 font-semibold text-left hover:underline mb-2">View Requirements</button>
+                <div class="reqs-content hidden">
+                    <ul class="list-disc list-inside text-sm text-gray-600 dark:text-gray-400 mt-2 space-y-1 pl-1">
+                        <li>Basic computer skills</li>
+                        <li>Own a laptop</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-4 border-t border-gray-200 dark:border-primary-800 mt-4">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">Location</p>
+                        <p class="font-semibold text-gray-800 dark:text-gray-200">Enugu, NG</p>
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">Deadline</p>
+                        <p class="font-semibold text-gray-800 dark:text-gray-200">Apr 10, 2025</p>
+                    </div>
+                </div>
+                <a href="#" class="block w-full text-center font-bold bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-lg transition-all-300 text-sm mt-2">Apply Now</a>
+            </div>
+        </div>
+    </div>
+    <!-- Training Card 6 -->
+    <div data-aos="zoom-in-up" data-aos-delay="600" class="tilt-card training-card bg-white dark:bg-primary-900/50 rounded-xl overflow-hidden shadow-lg dark:border dark:border-primary-800 group flex flex-col" data-tilt data-cost="Paid" data-category="Creative">
+        <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?q=80&w=2070&auto=format&fit=crop" alt="Tailoring Training" class="w-full h-48 object-cover">
+        <!-- Skill Type Badge -->
+        <span class="inline-block bg-tertiary-100 text-tertiary-700 dark:bg-tertiary-800 dark:text-tertiary-300 text-xs font-semibold rounded-full px-3 py-1 mt-3 ml-4 w-max">Creative</span>
+        <div class="p-6 flex flex-col flex-grow">
+            <p class="text-sm font-medium text-yellow-600 dark:text-yellow-400 uppercase tracking-wider mb-1">Tailor Academy</p>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Modern Tailoring Skills</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Get trained in modern tailoring techniques and start your own fashion business.</p>
+            <div class="flex-grow"></div>
+            <div>
+                 <button class="reqs-toggle-btn w-full text-sm text-yellow-600 dark:text-yellow-400 font-semibold text-left hover:underline mb-2">View Requirements</button>
+                <div class="reqs-content hidden">
+                    <ul class="list-disc list-inside text-sm text-gray-600 dark:text-gray-400 mt-2 space-y-1 pl-1">
+                        <li>Must be 18 years or older</li>
+                        <li>Passion for fashion</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-4 border-t border-gray-200 dark:border-primary-800 mt-4">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">Location</p>
+                        <p class="font-semibold text-gray-800 dark:text-gray-200">Kano, NG</p>
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">Deadline</p>
+                        <p class="font-semibold text-gray-800 dark:text-gray-200">May 5, 2025</p>
+                    </div>
+                </div>
+                <a href="#" class="block w-full text-center font-bold bg-yellow-600 hover:bg-yellow-700 text-white px-5 py-3 rounded-lg transition-all-300 text-sm mt-2">Apply Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+                <div id="load-more-container" class="mt-12 text-center">
+                    <button id="load-more-btn" class="bg-primary-600 hover:bg-primary-700 text-white px-10 py-3 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition-all-300 transform hover:scale-105">Load More Trainings</button>
+                </div>
+                <div id="no-results" class="hidden text-center text-gray-500 mt-12">
+                    <p>No trainings match your search criteria.</p>
                 </div>
             </div>
         </section>
     </main>
 
-   <footer class="bg-gray-900 dark:bg-black/30">
-        <div class="container mx-auto px-6 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="col-span-1 md:col-span-2">
-                     <a href="#" class="flex items-center space-x-2 text-2xl font-bold">
-                        <span class="w-10 h-10 bg-secondary-600 text-white flex items-center justify-center rounded-lg font-extrabold -rotate-12 transform">S</span>
-                        <span class="text-primary-500">Skill<span class="text-white">Reform</span><span class="text-gray-400">NG</span></span>
-                    </a>
-                    <p class="mt-4 text-gray-400 max-w-md">Illuminating skill-building paths and growth for every Nigerian.</p>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-white text-lg mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#about" class="text-gray-400 hover:text-white">About Us</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white">Contact Us</a></li>
-                        <li><a href="#programs" class="text-gray-400 hover:text-white">Find Trainings</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white">List Your Training</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-white text-lg mb-4">Follow Us</h4>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white" aria-label="Facebook"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
-                        <a href="#" class="text-gray-400 hover:text-white" aria-label="Twitter"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg></a>
-                        <a href="#" class="text-gray-400 hover:text-white" aria-label="Instagram"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C8.74 2 8.333.015 6.85 0.077c-1.482.063-2.502.32-3.396.723a4.926 4.926 0 00-1.772 1.772c-.403.894-.66 1.914-.723 3.396C.015 7.667 0 8.74 0 12s.015 4.333.077 5.815c.063 1.482.32 2.502.723 3.396a4.926 4.926 0 001.772 1.772c.894.403 1.914.66 3.396.723C7.667 23.985 8.74 24 12 24s4.333-.015 5.815-.077c1.482-.063 2.502-.32 3.396-.723a4.926 4.926 0 001.772-1.772c.403-.894.66-1.914.723-3.396C23.985 16.333 24 15.26 24 12s-.015-4.333-.077-5.815c-.063-1.482-.32-2.502-.723-3.396a4.926 4.926 0 00-1.772-1.772c-.894-.403-1.914-.66-3.396-.723C16.333 2.015 15.26 2 12 2zm0 4.625a5.375 5.375 0 100 10.75 5.375 5.375 0 000-10.75zm0 8.75a3.375 3.375 0 110-6.75 3.375 3.375 0 010 6.75zM18.375 6.25a1.375 1.375 0 100-2.75 1.375 1.375 0 000 2.75z" clip-rule="evenodd" /></svg></a>
-                        <a href="#" class="text-gray-400 hover:text-white" aria-label="LinkedIn"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-8 border-t border-gray-800 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 SkillReformNG. All rights reserved.</p>
-            </div>
+    <footer class="bg-gray-800 dark:bg-primary-950/50 text-white">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2025 SkillReformNG. All rights reserved.</p>
         </div>
     </footer>
 
+    <div id="requirements-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+        <div id="modal-content" class="bg-white dark:bg-primary-900 rounded-lg shadow-xl w-full max-w-lg p-6 relative">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-800 dark:hover:text-white">&times;</button>
+            <h3 id="modal-title" class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Training Requirements</h3>
+            <div id="modal-body" class="text-gray-600 dark:text-gray-300 space-y-2"></div>
+        </div>
+    </div>
+
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    
     <script src="script.js"></script>
 </body>
 </html>
