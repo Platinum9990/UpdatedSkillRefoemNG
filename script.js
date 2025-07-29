@@ -248,3 +248,41 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
     }
 });
+
+function generateToken() {
+    return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('training-form');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form values
+            const title = document.getElementById('training-title').value;
+            const organizer = document.getElementById('organizer-name').value;
+            const category = document.getElementById('category').value;
+            const cost = document.querySelector('input[name="cost"]:checked')?.value || '';
+            const location = document.getElementById('location').value;
+            const deadline = document.getElementById('deadline').value;
+            const link = document.getElementById('application-link').value;
+            const requirements = document.getElementById('requirements').value.split('\n').filter(Boolean);
+
+            // Generate a unique token
+            const verificationToken = generateToken();
+
+            // Save to pendingTrainings with the token
+            const pending = JSON.parse(localStorage.getItem('pendingTrainings') || '[]');
+            pending.push({ title, organizer, category, cost, location, deadline, link, requirements, verificationToken });
+            localStorage.setItem('pendingTrainings', JSON.stringify(pending));
+
+            // TODO: Send email to admin with the verification link
+            const verificationLink = `4dm1n-v3r1fy.html?token=${verificationToken}`;
+            console.log("Verification Link:", verificationLink); // For testing
+
+            alert('Training submitted! You will receive a verification email shortly.');
+            this.reset();
+        });
+    }
+});
