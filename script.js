@@ -93,7 +93,102 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- FIND TRAININGS PAGE-SPECIFIC LOGIC ---
     const trainingGrid = document.getElementById('training-grid');
     if (trainingGrid) {
-        // All the filtering, rendering, and modal logic for the find-trainings page goes here
+        // --- FILTER BUTTONS LOGIC ---
+        const categoryBtns = document.querySelectorAll('#category-filters .filter-btn');
+        const costBtns = document.querySelectorAll('#cost-filters .filter-btn');
+        let selectedCategory = 'All';
+        let selectedCost = 'All';
+
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                categoryBtns.forEach(b => b.classList.remove('active', 'bg-primary-100', 'text-primary-700', 'dark:bg-primary-800', 'dark:text-primary-300'));
+                this.classList.add('active', 'bg-primary-100', 'text-primary-700', 'dark:bg-primary-800', 'dark:text-primary-300');
+                selectedCategory = this.textContent.trim();
+                filterTrainings();
+            });
+        });
+
+        costBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                costBtns.forEach(b => b.classList.remove('active', 'bg-primary-100', 'text-primary-700', 'dark:bg-primary-800', 'dark:text-primary-300'));
+                this.classList.add('active', 'bg-primary-100', 'text-primary-700', 'dark:bg-primary-800', 'dark:text-primary-300');
+                selectedCost = this.textContent.trim();
+                filterTrainings();
+            });
+        });
+
+        // --- SEARCH FORM LOGIC ---
+        const searchForm = document.getElementById('search-form');
+        const searchInput = document.getElementById('search-input');
+        const dateInput = document.getElementById('date-range');
+
+        searchForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            filterTrainings();
+        });
+
+        dateInput.addEventListener('change', filterTrainings);
+
+        // --- FILTER FUNCTION ---
+        function filterTrainings() {
+            const searchTerm = searchInput.value.trim().toLowerCase();
+            const selectedDate = dateInput.value;
+            const cards = document.querySelectorAll('.training-card');
+            let anyVisible = false;
+
+            cards.forEach(card => {
+                let show = true;
+
+                // CATEGORY (precise: use data-category attribute)
+                if (selectedCategory !== 'All') {
+                    const cardCategory = card.getAttribute('data-category');
+                    show = show && cardCategory && cardCategory.toLowerCase() === selectedCategory.toLowerCase();
+                }
+
+                // COST (using data-cost attribute)
+                if (selectedCost !== 'All') {
+                    const cardCost = card.getAttribute('data-cost');
+                    show = show && cardCost && cardCost.toLowerCase() === selectedCost.toLowerCase();
+                }
+
+                // SEARCH
+                if (searchTerm) {
+                    const title = card.querySelector('h3')?.textContent?.toLowerCase() || '';
+                    const org = card.querySelector('p.text-sm.font-medium')?.textContent?.toLowerCase() || '';
+                    show = show && (title.includes(searchTerm) || org.includes(searchTerm));
+                }
+
+                // DATE
+                if (selectedDate) {
+                    // Try to find the deadline in the card
+                    const deadline = card.querySelector('.font-semibold.text-gray-800, .font-semibold.text-gray-200')?.textContent?.trim();
+                    if (deadline && deadline !== 'Ongoing') {
+                        let cardDate = new Date(deadline);
+                        let filterDate = new Date(selectedDate);
+                        if (isNaN(cardDate)) {
+                            cardDate = new Date(Date.parse(deadline));
+                        }
+                        show = show && (cardDate >= filterDate);
+                    }
+                }
+
+                card.style.display = show ? '' : 'none';
+                if (show) anyVisible = true;
+            });
+
+            const noResults = document.getElementById('no-results');
+            if (noResults) {
+                noResults.classList.toggle('hidden', anyVisible);
+            }
+        }
+
+        // --- REQUIREMENTS TOGGLE LOGIC ---
+        document.querySelectorAll('.reqs-toggle-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const reqs = this.nextElementSibling;
+                if (reqs) reqs.classList.toggle('hidden');
+            });
+        });
     }
 
     // --- UNIVERSAL LOGIC (for all pages) ---
