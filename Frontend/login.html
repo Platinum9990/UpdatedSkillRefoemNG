@@ -1,111 +1,279 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SkillReformNG - Login / Register</title>
-</head>
-<body>
-  <!-- LOGIN FORM -->
-  <form id="login-form">
-    <h2>Login</h2>
-    <input type="email" placeholder="Email" name="email" required />
-    <input type="password" placeholder="Password" name="password" required />
-    <label>
-      <input type="checkbox" name="remember" />
-      Remember Me
-    </label>
-    <button type="submit">Login</button>
-    <p>Don't have an account? <a href="#" onclick="toggleForms()">Register here</a></p>
-  </form>
-
-  <!-- REGISTER FORM -->
-  <form id="register-form" style="display: none;">
-    <h2>Register</h2>
-    <input type="text" placeholder="Full Name" name="name" required />
-    <input type="email" placeholder="Email" name="email" required />
-    <input type="password" placeholder="Password" name="password" required />
-    <select name="role" required>
-      <option value="">Select Role</option>
-      <option value="trainee">Trainee</option>
-      <option value="trainer">Trainer</option>
-    </select>
-    <button type="submit">Register</button>
-    <p>Already have an account? <a href="#" onclick="toggleForms()">Login here</a></p>
-  </form>
-
-  <script>
-    const apiBase = "http://localhost:5000/api/auth";
-
-    // toggle login/register
-    function toggleForms() {
-      const loginForm = document.getElementById("login-form");
-      const registerForm = document.getElementById("register-form");
-      loginForm.style.display = loginForm.style.display === "none" ? "block" : "none";
-      registerForm.style.display = registerForm.style.display === "none" ? "block" : "none";
-    }
-
-    // login
-    document.getElementById("login-form").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const form = e.target;
-      const email = form.email.value;
-      const password = form.password.value;
-      const remember = form.remember.checked;
-
-      try {
-        const res = await fetch(`${apiBase}/login`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email, password }),
-        });
-
-        const data = await res.json();
-
-        if (!res.ok) return alert(data.message || "Login failed");
-
-        if (remember) {
-          localStorage.setItem("token", data.token);
-        } else {
-          sessionStorage.setItem("token", data.token);
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login & Sign Up - SkillReformNG</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], },
+                    colors: {
+                        primary: { '50': '#eff6ff', '100': '#dbeafe', '200': '#bfdbfe', '300': '#93c5fd', '400': '#60a5fa', '500': '#3b82f6', '600': '#2563eb', '700': '#1d4ed8', '800': '#1e40af', '900': '#1e3a8a', '950': '#172554' },
+                        secondary: { '50': '#f0fdf4', '100': '#dcfce7', '200': '#bbf7d0', '300': '#86efac', '400': '#4ade80', '500': '#22c55e', '600': '#16a34a', '700': '#15803d', '800': '#166534', '900': '#14532d', '950': '#052e16' },
+                    }
+                }
+            }
         }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .auth-bg {
+            background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        #animated-character {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 100;
+            animation: float 6s ease-in-out infinite;
+        }
+        .pulse-circle {
+            animation: pulse 3s infinite ease-in-out;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        @keyframes pulse {
+            0% { r: 40; opacity: 0.1; }
+            50% { r: 50; opacity: 0.3; }
+            100% { r: 40; opacity: 0.1; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-primary-950 text-gray-800 dark:text-gray-200 transition-colors duration-300">
 
-        alert("Login successful!");
-        // Redirect to dashboard (replace with your actual page)
-        window.location.href = "index.html";
+    <header id="navbar" class="bg-white/80 dark:bg-primary-950/70 backdrop-blur-md shadow-sm dark:shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-3">
+                <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold">
+                    <span class="w-10 h-10 bg-secondary-600 text-white flex items-center justify-center rounded-lg font-extrabold -rotate-12 transform">S</span>
+                    <span class="text-primary-600 dark:text-primary-400">Skill<span class="text-gray-800 dark:text-white">Reform</span><span class="text-gray-400">NG</span></span>
+                </a>
+                <nav class="hidden md:flex items-center space-x-6">
+                    <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none rounded-lg text-sm p-2.5">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 5.05A1 1 0 003.636 6.464l.707.707a1 1 0 001.414-1.414l-.707-.707zM3 11a1 1 0 100-2H2a1 1 0 100 2h1zM6.464 16.364l.707-.707a1 1 0 011.414 1.414l-.707.707a1 1 0 01-1.414-1.414z"></path></svg>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-      } catch (err) {
-        console.error("Login error:", err);
-        alert("Server error");
-      }
-    });
+    <main class="min-h-screen flex items-center justify-center py-24 px-4">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row w-full max-w-6xl mx-auto bg-white dark:bg-primary-900/50 rounded-xl shadow-2xl overflow-hidden border dark:border-primary-800">
+                <!-- Visual Side -->
+                <div class="hidden md:block md:w-1/2 relative auth-bg">
+                    <div class="absolute inset-0 bg-primary-900 bg-opacity-60 flex flex-col justify-center p-12 text-white">
+                        <h2 class="text-4xl font-bold leading-tight z-10">Unlock Your Potential.</h2>
+                        <p class="mt-4 text-lg text-primary-200 z-10">Join a thriving community of learners and experts dedicated to building a skilled Nigeria.</p>
+                    </div>
+                </div>
 
-    // register
-    document.getElementById("register-form").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const form = e.target;
-      const fullName = form.name.value;
-      const email = form.email.value;
-      const password = form.password.value;
-      const role = form.role.value;
+                <!-- Form Side -->
+                <div class="w-full md:w-1/2 p-8 sm:p-12 md:p-16">
+                    <div id="login-container">
+                        <div class="mb-6 text-center">
+                            <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Login</h1>
+                        </div>
+                        <form id="login-form" class="space-y-4">
+                            <div>
+                                <label for="login-email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email Address</label>
+                                <input type="email" name="email" required class="mt-1 block w-full px-4 py-3 border border-gray-300 dark:border-primary-700 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-primary-900">
+                            </div>
+                            <div>
+                                <div class="flex justify-between items-center">
+                                    <label for="login-password" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Password</label>
+                                </div>
+                                <input type="password" name="password" required class="mt-1 block w-full px-4 py-3 border border-gray-300 dark:border-primary-700 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-primary-900">
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" name="remember" id="remember" class="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded">
+                                <label for="remember" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">Remember Me</label>
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">Login</button>
+                            </div>
+                            <p class="text-sm text-center text-gray-600 dark:text-gray-400">Don't have an account? <a href="#" onclick="toggleForms()" class="font-medium text-primary-600 hover:underline">Register here</a></p>
+                        </form>
+                    </div>
 
-      try {
-        const res = await fetch(`${apiBase}/register`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ fullName, email, password, role }),
+                    <div id="register-container" class="hidden">
+                         <div class="mb-6 text-center">
+                            <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Register</h1>
+                        </div>
+                        <form id="register-form" class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Full Name / Organisation</label>
+                                <input type="text" name="name" required class="mt-1 block w-full px-4 py-3 border border-gray-300 dark:border-primary-700 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-primary-900">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email Address</label>
+                                <input type="email" name="email" required class="mt-1 block w-full px-4 py-3 border border-gray-300 dark:border-primary-700 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-primary-900">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Password</label>
+                                <input type="password" name="password" required class="mt-1 block w-full px-4 py-3 border border-gray-300 dark:border-primary-700 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-primary-900">
+                            </div>
+                             <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">I am a...</label>
+                                <select name="role" required class="mt-1 block w-full px-4 py-3 border border-gray-300 dark:border-primary-700 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-primary-900">
+                                    <option value="">Select Role</option>
+                                    <option value="trainee">Trainee</option>
+                                    <option value="trainer">Trainer</option>
+                                </select>
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-secondary-600 hover:bg-secondary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500">Register</button>
+                            </div>
+                             <p class="text-sm text-center text-gray-600 dark:text-gray-400">Already have an account? <a href="#" onclick="toggleForms()" class="font-medium text-primary-600 hover:underline">Login here</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Animated Character -->
+    <div id="animated-character" class="hidden md:block">
+        <svg width="100" height="100" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="40" fill="rgba(37, 99, 235, 0.1)" class="pulse-circle"/>
+            <g id="character-shape">
+                <rect x="20" y="20" width="60" height="60" rx="10" fill="#2563eb" transform="rotate(-12 50 50)"/>
+                <text x="50" y="68" font-family="Inter, sans-serif" font-size="50" font-weight="800" fill="white" text-anchor="middle" class="s-logo" transform="rotate(-12 50 50)">S</text>
+            </g>
+        </svg>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginContainer = document.getElementById('login-container');
+            const registerContainer = document.getElementById('register-container');
+
+            window.toggleForms = () => {
+                loginContainer.classList.toggle('hidden');
+                registerContainer.classList.toggle('hidden');
+            };
+
+            // --- Theme Toggle Logic ---
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            if (themeToggleBtn) {
+                const darkIcon = document.getElementById('theme-toggle-dark-icon');
+                const lightIcon = document.getElementById('theme-toggle-light-icon');
+                if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    lightIcon.classList.remove('hidden');
+                    document.documentElement.classList.add('dark');
+                } else {
+                    darkIcon.classList.remove('hidden');
+                }
+                themeToggleBtn.addEventListener('click', function() {
+                    darkIcon.classList.toggle('hidden');
+                    lightIcon.classList.toggle('hidden');
+                    document.documentElement.classList.toggle('dark');
+                    const theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+                    localStorage.setItem('color-theme', theme);
+                });
+            }
+
+            // --- Animated Character Logic ---
+            const characterShape = document.getElementById('character-shape');
+            if (characterShape) {
+                const characters = [
+                    `<rect x="20" y="20" width="60" height="60" rx="10" fill="#2563eb" transform="rotate(-12 50 50)"/><text x="50" y="68" font-family="Inter, sans-serif" font-size="50" font-weight="800" fill="white" text-anchor="middle" class="s-logo" transform="rotate(-12 50 50)">S</text>`,
+                    `<rect x="20" y="20" width="60" height="60" rx="10" fill="#22c55e" transform="rotate(-12 50 50)"/><text x="50" y="68" font-family="Inter, sans-serif" font-size="50" font-weight="800" fill="white" text-anchor="middle" class="s-logo" transform="rotate(-12 50 50)">R</text>`,
+                    `<rect x="20" y="20" width="60" height="60" rx="10" fill="#7c3aed" transform="rotate(-12 50 50)"/><text x="50" y="68" font-family="Inter, sans-serif" font-size="50" font-weight="800" fill="white" text-anchor="middle" class="s-logo" transform="rotate(-12 50 50)">N</text>`
+                ];
+                let currentCharIndex = 0;
+                
+                setInterval(() => {
+                    currentCharIndex = (currentCharIndex + 1) % characters.length;
+                    characterShape.innerHTML = characters[currentCharIndex];
+                }, 50000); // 50 seconds
+            }
+
+            // --- Backend Logic ---
+            const apiBase = "http://localhost:5000/api/auth"; // TODO: Replace with your production API URL
+
+            const loginForm = document.getElementById("login-form");
+            if (loginForm) {
+                loginForm.addEventListener("submit", async (e) => {
+                    e.preventDefault();
+                    const form = e.target;
+                    const email = form.email.value;
+                    const password = form.password.value;
+                    const remember = form.remember.checked;
+
+                    try {
+                        const res = await fetch(`${apiBase}/login`, {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({ email, password }),
+                        });
+
+                        const data = await res.json();
+
+                        if (!res.ok) return alert(data.message || "Login failed");
+
+                        if (remember) {
+                            localStorage.setItem("token", data.token);
+                        } else {
+                            sessionStorage.setItem("token", data.token);
+                        }
+
+                        alert("Login successful!");
+                        // TODO: Redirect to the correct dashboard based on user role
+                        window.location.href = "index.html";
+
+                    } catch (err) {
+                        console.error("Login error:", err);
+                        alert("Server error");
+                    }
+                });
+            }
+
+            const registerForm = document.getElementById("register-form");
+            if(registerForm) {
+                registerForm.addEventListener("submit", async (e) => {
+                    e.preventDefault();
+                    const form = e.target;
+                    const fullName = form.name.value;
+                    const email = form.email.value;
+                    const password = form.password.value;
+                    const role = form.role.value;
+
+                    try {
+                        const res = await fetch(`${apiBase}/register`, {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({ fullName, email, password, role }),
+                        });
+
+                        const data = await res.json();
+                        if (!res.ok) return alert(data.message || "Registration failed");
+
+                        alert("Registration successful. Check your email to verify.");
+                        toggleForms(); // switch back to login
+                    } catch (err) {
+                        console.error("Register error:", err);
+                        alert("Server error");
+                    }
+                });
+            }
         });
-
-        const data = await res.json();
-        if (!res.ok) return alert(data.message || "Registration failed");
-
-        alert("Registration successful. Check your email to verify.");
-        toggleForms(); // switch back to login
-      } catch (err) {
-        console.error("Register error:", err);
-        alert("Server error");
-      }
-    });
-  </script>
+    </script>
 </body>
 </html>
