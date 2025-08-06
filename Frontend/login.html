@@ -24,35 +24,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     
-    <style>
-        .auth-bg {
-            background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-        }
-        #animated-character {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            z-index: 100;
-            animation: float 6s ease-in-out infinite;
-        }
-        .pulse-circle {
-            animation: pulse 3s infinite ease-in-out;
-        }
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-        @keyframes pulse {
-            0% { r: 40; opacity: 0.1; }
-            50% { r: 50; opacity: 0.3; }
-            100% { r: 40; opacity: 0.1; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-50 dark:bg-primary-950 text-gray-800 dark:text-gray-200 transition-colors duration-300">
 
@@ -76,7 +49,6 @@
     <main class="min-h-screen flex items-center justify-center py-24 px-4">
         <div class="container mx-auto">
             <div class="flex flex-col md:flex-row w-full max-w-6xl mx-auto bg-white dark:bg-primary-900/50 rounded-xl shadow-2xl overflow-hidden border dark:border-primary-800">
-                <!-- Visual Side -->
                 <div class="hidden md:block md:w-1/2 relative auth-bg">
                     <div class="absolute inset-0 bg-primary-900 bg-opacity-60 flex flex-col justify-center p-12 text-white">
                         <h2 class="text-4xl font-bold leading-tight z-10">Unlock Your Potential.</h2>
@@ -84,7 +56,6 @@
                     </div>
                 </div>
 
-                <!-- Form Side -->
                 <div class="w-full md:w-1/2 p-8 sm:p-12 md:p-16">
                     <div id="login-container">
                         <div class="mb-6 text-center">
@@ -108,7 +79,7 @@
                             <div>
                                 <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">Login</button>
                             </div>
-                            <p class="text-sm text-center text-gray-600 dark:text-gray-400">Don't have an account? <a href="#" onclick="toggleForms()" class="font-medium text-primary-600 hover:underline">Register here</a></p>
+                            <p class="text-sm text-center text-gray-600 dark:text-gray-400">Don't have an account? <a href="#" id="show-register-link" class="font-medium text-primary-600 hover:underline">Register here</a></p>
                         </form>
                     </div>
 
@@ -140,7 +111,7 @@
                             <div>
                                 <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-secondary-600 hover:bg-secondary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500">Register</button>
                             </div>
-                             <p class="text-sm text-center text-gray-600 dark:text-gray-400">Already have an account? <a href="#" onclick="toggleForms()" class="font-medium text-primary-600 hover:underline">Login here</a></p>
+                             <p class="text-sm text-center text-gray-600 dark:text-gray-400">Already have an account? <a href="#" id="show-login-link" class="font-medium text-primary-600 hover:underline">Login here</a></p>
                         </form>
                     </div>
                 </div>
@@ -148,8 +119,7 @@
         </div>
     </main>
     
-    <!-- Animated Character -->
-    <div id="animated-character" class="hidden md:block">
+    <div id="animated-character">
         <svg width="100" height="100" viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="40" fill="rgba(37, 99, 235, 0.1)" class="pulse-circle"/>
             <g id="character-shape">
@@ -159,121 +129,7 @@
         </svg>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const loginContainer = document.getElementById('login-container');
-            const registerContainer = document.getElementById('register-container');
-
-            window.toggleForms = () => {
-                loginContainer.classList.toggle('hidden');
-                registerContainer.classList.toggle('hidden');
-            };
-
-            // --- Theme Toggle Logic ---
-            const themeToggleBtn = document.getElementById('theme-toggle');
-            if (themeToggleBtn) {
-                const darkIcon = document.getElementById('theme-toggle-dark-icon');
-                const lightIcon = document.getElementById('theme-toggle-light-icon');
-                if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                    lightIcon.classList.remove('hidden');
-                    document.documentElement.classList.add('dark');
-                } else {
-                    darkIcon.classList.remove('hidden');
-                }
-                themeToggleBtn.addEventListener('click', function() {
-                    darkIcon.classList.toggle('hidden');
-                    lightIcon.classList.toggle('hidden');
-                    document.documentElement.classList.toggle('dark');
-                    const theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-                    localStorage.setItem('color-theme', theme);
-                });
-            }
-
-            // --- Animated Character Logic ---
-            const characterShape = document.getElementById('character-shape');
-            if (characterShape) {
-                const characters = [
-                    `<rect x="20" y="20" width="60" height="60" rx="10" fill="#2563eb" transform="rotate(-12 50 50)"/><text x="50" y="68" font-family="Inter, sans-serif" font-size="50" font-weight="800" fill="white" text-anchor="middle" class="s-logo" transform="rotate(-12 50 50)">S</text>`,
-                    `<rect x="20" y="20" width="60" height="60" rx="10" fill="#22c55e" transform="rotate(-12 50 50)"/><text x="50" y="68" font-family="Inter, sans-serif" font-size="50" font-weight="800" fill="white" text-anchor="middle" class="s-logo" transform="rotate(-12 50 50)">R</text>`,
-                    `<rect x="20" y="20" width="60" height="60" rx="10" fill="#7c3aed" transform="rotate(-12 50 50)"/><text x="50" y="68" font-family="Inter, sans-serif" font-size="50" font-weight="800" fill="white" text-anchor="middle" class="s-logo" transform="rotate(-12 50 50)">N</text>`
-                ];
-                let currentCharIndex = 0;
-                
-                setInterval(() => {
-                    currentCharIndex = (currentCharIndex + 1) % characters.length;
-                    characterShape.innerHTML = characters[currentCharIndex];
-                }, 50000); // 50 seconds
-            }
-
-            // --- Backend Logic ---
-            const apiBase = "http://localhost:5000/api/auth"; // TODO: Replace with your production API URL
-
-            const loginForm = document.getElementById("login-form");
-            if (loginForm) {
-                loginForm.addEventListener("submit", async (e) => {
-                    e.preventDefault();
-                    const form = e.target;
-                    const email = form.email.value;
-                    const password = form.password.value;
-                    const remember = form.remember.checked;
-
-                    try {
-                        const res = await fetch(`${apiBase}/login`, {
-                            method: "POST",
-                            headers: { "Content-Type": "application/json" },
-                            body: JSON.stringify({ email, password }),
-                        });
-
-                        const data = await res.json();
-
-                        if (!res.ok) return alert(data.message || "Login failed");
-
-                        if (remember) {
-                            localStorage.setItem("token", data.token);
-                        } else {
-                            sessionStorage.setItem("token", data.token);
-                        }
-
-                        alert("Login successful!");
-                        // TODO: Redirect to the correct dashboard based on user role
-                        window.location.href = "index.html";
-
-                    } catch (err) {
-                        console.error("Login error:", err);
-                        alert("Server error");
-                    }
-                });
-            }
-
-            const registerForm = document.getElementById("register-form");
-            if(registerForm) {
-                registerForm.addEventListener("submit", async (e) => {
-                    e.preventDefault();
-                    const form = e.target;
-                    const fullName = form.name.value;
-                    const email = form.email.value;
-                    const password = form.password.value;
-                    const role = form.role.value;
-
-                    try {
-                        const res = await fetch(`${apiBase}/register`, {
-                            method: "POST",
-                            headers: { "Content-Type": "application/json" },
-                            body: JSON.stringify({ fullName, email, password, role }),
-                        });
-
-                        const data = await res.json();
-                        if (!res.ok) return alert(data.message || "Registration failed");
-
-                        alert("Registration successful. Check your email to verify.");
-                        toggleForms(); // switch back to login
-                    } catch (err) {
-                        console.error("Register error:", err);
-                        alert("Server error");
-                    }
-                });
-            }
-        });
-    </script>
+    <script src="script.js" defer></script>
+    <script src="log.js" defer></script>
 </body>
 </html>
