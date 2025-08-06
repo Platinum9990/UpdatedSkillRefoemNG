@@ -1,0 +1,34 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "skill learn ",
+  "main": "index.js",
+  "scripts": {
+    "dev": "server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Platinum9990/UpdatedSkillRefoemNG.git"
+  },
+  "keywords": [
+    "skills",
+    "learn"
+  ],
+  "author": "Reabot6",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Platinum9990/UpdatedSkillRefoemNG/issues"
+  },
+  "homepage": "https://github.com/Platinum9990/UpdatedSkillRefoemNG#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mailslurp-client": "^15.24.2",
+    "mongoose": "^8.17.0",
+    "nodemailer": "^7.0.5",
+    "slugify": "^1.6.6"
+  }
+}

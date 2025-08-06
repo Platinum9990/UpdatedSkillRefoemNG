@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkillReformNG - Login / Register</title>
+</head>
+<body>
+  <!-- LOGIN FORM -->
+  <form id="login-form">
+    <h2>Login</h2>
+    <input type="email" placeholder="Email" name="email" required />
+    <input type="password" placeholder="Password" name="password" required />
+    <label>
+      <input type="checkbox" name="remember" />
+      Remember Me
+    </label>
+    <button type="submit">Login</button>
+    <p>Don't have an account? <a href="#" onclick="toggleForms()">Register here</a></p>
+  </form>
+
+  <!-- REGISTER FORM -->
+  <form id="register-form" style="display: none;">
+    <h2>Register</h2>
+    <input type="text" placeholder="Full Name" name="name" required />
+    <input type="email" placeholder="Email" name="email" required />
+    <input type="password" placeholder="Password" name="password" required />
+    <select name="role" required>
+      <option value="">Select Role</option>
+      <option value="trainee">Trainee</option>
+      <option value="trainer">Trainer</option>
+    </select>
+    <button type="submit">Register</button>
+    <p>Already have an account? <a href="#" onclick="toggleForms()">Login here</a></p>
+  </form>
+
+  <script>
+    const apiBase = "http://localhost:5000/api/auth";
+
+    // toggle login/register
+    function toggleForms() {
+      const loginForm = document.getElementById("login-form");
+      const registerForm = document.getElementById("register-form");
+      loginForm.style.display = loginForm.style.display === "none" ? "block" : "none";
+      registerForm.style.display = registerForm.style.display === "none" ? "block" : "none";
+    }
+
+    // login
+    document.getElementById("login-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const email = form.email.value;
+      const password = form.password.value;
+      const remember = form.remember.checked;
+
+      try {
+        const res = await fetch(`${apiBase}/login`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) return alert(data.message || "Login failed");
+
+        if (remember) {
+          localStorage.setItem("token", data.token);
+        } else {
+          sessionStorage.setItem("token", data.token);
+        }
+
+        alert("Login successful!");
+        // Redirect to dashboard (replace with your actual page)
+        window.location.href = "index.html";
+
+      } catch (err) {
+        console.error("Login error:", err);
+        alert("Server error");
+      }
+    });
+
+    // register
+    document.getElementById("register-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const fullName = form.name.value;
+      const email = form.email.value;
+      const password = form.password.value;
+      const role = form.role.value;
+
+      try {
+        const res = await fetch(`${apiBase}/register`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ fullName, email, password, role }),
+        });
+
+        const data = await res.json();
+        if (!res.ok) return alert(data.message || "Registration failed");
+
+        alert("Registration successful. Check your email to verify.");
+        toggleForms(); // switch back to login
+      } catch (err) {
+        console.error("Register error:", err);
+        alert("Server error");
+      }
+    });
+  </script>
+</body>
+</html>

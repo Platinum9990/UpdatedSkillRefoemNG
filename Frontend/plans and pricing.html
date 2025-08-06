@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plans & Pricing - SkillReformNG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: { '50': '#eff6ff', '100': '#dbeafe', '200': '#bfdbfe', '300': '#93c5fd', '400': '#60a5fa', '500': '#3b82f6', '600': '#2563eb', '700': '#1d4ed8', '800': '#1e40af', '900': '#1e3a8a', '950': '#172554' },
+                        secondary: { '50': '#f0fdf4', '100': '#dcfce7', '200': '#bbf7d0', '300': '#86efac', '400': '#4ade80', '500': '#22c55e', '600': '#16a34a', '700': '#15803d', '800': '#166534', '900': '#14532d', '950': '#052e16' },
+                        tertiary: { '50': '#f5f3ff', '100': '#ede9fe', '200': '#ddd6fe', '300': '#c4b5fd', '400': '#a78bfa', '500': '#8b5cf6', '600': '#7c3aed', '700': '#6d28d9', '800': '#5b21b6', '900': '#4c1d95', '950': '#2e1065' }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-primary-950 dark:text-gray-300 transition-colors duration-300">
+
+    <header id="navbar" class="bg-white/80 dark:bg-primary-950/70 backdrop-blur-md shadow-sm dark:shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-3">
+                <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold">
+                    <span class="w-10 h-10 bg-secondary-600 text-white flex items-center justify-center rounded-lg font-extrabold -rotate-12 transform">S</span>
+                    <span class="text-primary-600 dark:text-primary-400">Skill<span class="text-gray-800 dark:text-white">Reform</span><span class="text-gray-400">NG</span></span>
+                </a>
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-all-300">Home</a>
+                    <a href="about.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-all-300">About</a>
+                    <a href="contact.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-all-300">Contact Us</a>
+                    <a href="find-trainings.html" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-all-300">Find Trainings</a>
+                    <a href="plans.html" class="text-primary-600 dark:text-primary-400 font-semibold">Plans & Pricing</a>
+                    <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none rounded-lg text-sm p-2.5">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 5.05A1 1 0 003.636 6.464l.707.707a1 1 0 001.414-1.414l-.707-.707zM3 11a1 1 0 100-2H2a1 1 0 100 2h1zM6.464 16.364l.707-.707a1 1 0 011.414 1.414l-.707.707a1 1 0 01-1.414-1.414z"></path></svg>
+                    </button>
+                </nav>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 dark:text-gray-300 focus:outline-none">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 dark:border-primary-800">
+             <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="index.html" class="block text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2">Home</a>
+                <a href="about us.html" class="block text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2">About</a>
+                <a href="contact.html" class="block text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2">Contact Us</a>
+                <a href="./Training.html" class="block text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 py-2">Find Trainings</a>
+
+             </div>
+       
+         
+            
+                    
+    </header>
+
+    <main class="pt-24">
+        <section class="bg-primary-600 dark:bg-primary-900/50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white" data-aos="fade-up">Plans & Services</h1>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-primary-200" data-aos="fade-up" data-aos-delay="100">Choose the best option to amplify your impact and reach motivated learners across Nigeria.</p>
+            </div>
+        </section>
+
+        <section class="py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-2xl mx-auto mb-12" data-aos="fade-up">
+                    <div class="border-b border-gray-200 dark:border-gray-700">
+                        <nav class="-mb-px flex justify-center space-x-8" aria-label="Tabs">
+                            <button id="tab-trainers" class="tab-btn active whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg">For Trainers</button>
+                            <button id="tab-orgs" class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg">For Organizations</button>
+                        </nav>
+                    </div>
+                </div>
+
+                <div id="plans-trainers">
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                        <div class="tilt-card bg-white dark:bg-primary-900/30 dark:border dark:border-primary-800 rounded-2xl shadow-lg p-8 flex flex-col" data-aos="fade-up" data-aos-delay="100" data-tilt>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Basic Listing</h3>
+                            <p class="mt-2 text-gray-600 dark:text-gray-300">Get your training in front of our audience.</p>
+                            <p class="mt-6 text-4xl font-extrabold text-gray-900 dark:text-white">Free</p>
+                            <ul class="mt-6 space-y-4 text-gray-600 dark:text-gray-300 flex-grow">
+                                <li class="flex items-center space-x-3"><span>&#10003;</span><span>Verified Listing in Directory</span></li>
+                                <li class="flex items-center space-x-3"><span>&#10003;</span><span>Standard Visibility</span></li>
+                            </ul>
+                            <a href="contact.html" class="mt-8 block w-full text-center font-bold bg-gray-200 dark:bg-primary-800 hover:bg-gray-300 dark:hover:bg-primary-700 text-gray-800 dark:text-white px-6 py-3 rounded-lg transition-all-300">Get Started</a>
+                        </div>
+                        <div class="tilt-card relative bg-white dark:bg-primary-900/30 rounded-2xl shadow-lg p-8 flex flex-col ring-2 ring-primary-600" data-aos="fade-up" data-aos-delay="200" data-tilt>
+                             <p class="absolute top-0 -translate-y-1/2 bg-primary-600 text-white px-4 py-1 rounded-full font-semibold self-center">Best Value</p>
+                            <h3 class="text-2xl font-bold text-primary-600 dark:text-primary-400">Premium Subscription</h3>
+                            <p class="mt-2 text-gray-600 dark:text-gray-300">Maximize your reach and get noticed.</p>
+                            <div class="mt-6">
+                                <p class="text-4xl font-extrabold text-gray-900 dark:text-white">₦50,000 <span class="text-base font-medium text-gray-500">/ month</span></p>
+                                <p class="text-sm text-gray-500 mt-1">or ₦500,000 / year (Save 2 months!)</p>
+                            </div>
+                            <ul class="mt-6 space-y-4 text-gray-600 dark:text-gray-300 flex-grow">
+                                <li class="flex items-center space-x-3"><span>&#10003;</span><span>All Basic Features</span></li>
+                                <li class="flex items-center space-x-3"><span>&#10003;</span><span class="font-semibold text-primary-600 dark:text-primary-400">Homepage Feature</span></li>
+                                <li class="flex items-center space-x-3"><span>&#10003;</span><span>Social Media Promotion</span></li>
+                                <li class="flex items-center space-x-3"><span>&#10003;</span><span>"Verified Partner" Badge</span></li>
+                            </ul>
+                            <a href="contact.html" class="mt-8 block w-full text-center font-bold bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg transition-all-300">Choose Premium</a>
+                        </div>
+                         <div class="tilt-card bg-white dark:bg-primary-900/30 dark:border dark:border-primary-800 rounded-2xl shadow-lg p-8 flex flex-col" data-aos="fade-up" data-aos-delay="300" data-tilt>
+                            <h3 class="text-2xl font-bold text-secondary-700 dark:text-secondary-400">Single Boost</h3>
+                            <p class="mt-2 text-gray-600 dark:text-gray-300">Feature a single training listing.</p>
+                            <p class="mt-6 text-4xl font-extrabold text-gray-900 dark:text-white">₦10,000 <span class="text-base font-medium text-gray-500">/ training</span></p>
+                            <ul class="mt-6 space-y-4 text-gray-600 dark:text-gray-300 flex-grow">
+                                <li class="flex items-center space-x-3"><span>&#10003;</span><span>Includes Basic Listing features</span></li>
+                                <li class="flex items-center space-x-3"><span>&#10003;</span><span class="font-semibold text-secondary-600 dark:text-secondary-400">Featured on Homepage</span></li>
+                            </ul>
+                            <a href="contact.html" class="mt-8 block w-full text-center font-bold bg-secondary-600 hover:bg-secondary-700 text-white px-6 py-3 rounded-lg transition-all-300">Boost Training</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="plans-orgs" class="hidden">
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                        <div class="tilt-card bg-white dark:bg-primary-900/30 dark:border dark:border-primary-800 rounded-2xl shadow-lg p-8 flex flex-col" data-aos="fade-up" data-aos-delay="100" data-tilt>
+                            <h3 class="text-2xl font-bold text-primary-600 dark:text-primary-400">Featured Program</h3>
+                            <p class="mt-2 text-gray-600 dark:text-gray-300">Promote your organization's flagship program.</p>
+                            <p class="mt-6 text-4xl font-extrabold text-gray-900 dark:text-white">₦25,000</p>
+                             <ul class="mt-6 space-y-4 text-gray-600 dark:text-gray-300 flex-grow">
+                                <li class="flex items-center space-x-3"><span>&#10003;</span><span>Homepage Feature for 30 Days</span></li>
+                                <li class="flex items-center space-x-3"><span>&#10003;</span><span>Social Media Promotion</span></li>
+                                <li class="flex items-center space-x-3"><span>&#10003;</span><span>Highlighted in Search Results</span></li>
+                            </ul>
+                            <a href="contact.html" class="mt-8 block w-full text-center font-bold bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg transition-all-300">Feature Program</a>
+                        </div>
+                        <div class="tilt-card bg-white dark:bg-primary-900/30 dark:border dark:border-primary-800 rounded-2xl shadow-lg p-8 flex flex-col" data-aos="fade-up" data-aos-delay="200" data-tilt>
+                            <h3 class="text-2xl font-bold text-secondary-700 dark:text-secondary-400">Custom Promotion</h3>
+                            <p class="mt-2 text-gray-600 dark:text-gray-300 flex-grow">Amplify the reach of your initiatives with our targeted promotion packages.</p>
+                            <p class="mt-6 text-2xl font-bold text-gray-900 dark:text-white">Packages Available</p>
+                            <a href="contact.html" class="mt-8 block w-full text-center font-bold bg-secondary-600 hover:bg-secondary-700 text-white px-6 py-3 rounded-lg transition-all-300">Request Info</a>
+                        </div>
+                        <div class="tilt-card bg-white dark:bg-primary-900/30 dark:border dark:border-primary-800 rounded-2xl shadow-lg p-8 flex flex-col" data-aos="fade-up" data-aos-delay="300" data-tilt>
+                            <h3 class="text-2xl font-bold text-tertiary-700 dark:text-tertiary-400">Find Volunteers</h3>
+                            <p class="mt-2 text-gray-600 dark:text-gray-300 flex-grow">Need skilled hands for your project? We connect organizations with verified, passionate volunteers.</p>
+                             <p class="mt-6 text-2xl font-bold text-gray-900 dark:text-white">Fee Per Placement</p>
+                             <a href="contact.html" class="mt-8 block w-full text-center font-bold bg-tertiary-600 hover:bg-tertiary-700 text-white px-6 py-3 rounded-lg transition-all-300">Submit Request</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 dark:bg-primary-950/50 text-white">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2025 SkillReformNG. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

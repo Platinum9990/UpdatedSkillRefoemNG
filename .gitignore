@@ -1,0 +1,24 @@
+# Node.js
+node_modules/
+.env
+.DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# OS-specific
+Thumbs.db
+*.log
+
+# VSCode
+.vscode/
+
+# Build output
+dist/
+build/
+
+# Optional: frontend-related
+*.zip
+*.env.local
+.cache/
