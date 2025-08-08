@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" class="light scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile - SkillReformNG</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], },
+                    colors: {
+                        primary: { '50': '#eff6ff', '100': '#dbeafe', '200': '#bfdbfe', '300': '#93c5fd', '400': '#60a5fa', '500': '#3b82f6', '600': '#2563eb', '700': '#1d4ed8', '800': '#1e40af', '900': '#1e3a8a', '950': '#172554' },
+                        secondary: { '50': '#f0fdf4', '100': '#dcfce7', '200': '#bbf7d0', '300': '#86efac', '400': '#4ade80', '500': '#22c55e', '600': '#16a34a', '700': '#15803d', '800': '#166534', '900': '#14532d', '950': '#052e16' },
+                        tertiary: { '50': '#f5f3ff', '100': '#ede9fe', '200': '#ddd6fe', '300': '#c4b5fd', '400': '#a78bfa', '500': '#8b5cf6', '600': '#7c3aed', '700': '#6d28d9', '800': '#5b21b6', '900': '#4c1d95', '950': '#2e1065' }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 dark:bg-primary-950 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+
+    <div class="flex min-h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 flex-shrink-0 bg-white dark:bg-primary-900/50 border-r dark:border-primary-800 hidden md:block">
+            <div class="flex items-center justify-center h-20 border-b dark:border-primary-800">
+                 <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold">
+                    <span class="w-10 h-10 bg-secondary-600 text-white flex items-center justify-center rounded-lg font-extrabold -rotate-12 transform">S</span>
+                    <span class="text-primary-600 dark:text-primary-400">Skill<span class="text-gray-800 dark:text-white">Reform</span></span>
+                </a>
+            </div>
+            <nav class="mt-6">
+                <a href="dashboard.html" class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-primary-800/30">
+                    <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                    Dashboard
+                </a>
+                <a href="my-trainings.html" class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-primary-800/30">
+                    <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
+                    My Trainings
+                </a>
+                 <a href="request-volunteers.html" class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-primary-800/30">
+                    <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    Request Volunteers
+                </a>
+                <a href="#" class="flex items-center px-6 py-3 text-primary-600 dark:text-primary-300 bg-primary-100 dark:bg-primary-800/50 font-semibold">
+                    <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                    Profile
+                </a>
+                <a href="#" class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-primary-800/30">
+                    <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                    Logout
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col">
+            <header class="flex items-center justify-between h-20 px-6 bg-white dark:bg-primary-900/50 border-b dark:border-primary-800">
+                <div class="md:hidden">
+                    <!-- Mobile Menu Button -->
+                </div>
+                <h1 class="text-2xl font-bold text-gray-900 dark:text-white">My Profile</h1>
+                <div class="flex items-center space-x-4">
+                     <div class="relative">
+                        <select id="lang-switcher" class="bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-300 text-sm rounded-full focus:ring-primary-500 focus:border-primary-500 block w-full pl-4 pr-10 py-2 appearance-none">
+                            <option selected value="en">English</option>
+                            <option value="yo">Yoruba</option>
+                            <option value="ha">Hausa</option>
+                            <option value="ig">Igbo</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-700 dark:text-gray-400">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                        </div>
+                    </div>
+                    <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none rounded-lg text-sm p-2.5">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 5.05A1 1 0 003.636 6.464l.707.707a1 1 0 001.414-1.414l-.707-.707zM3 11a1 1 0 100-2H2a1 1 0 100 2h1zM6.464 16.364l.707-.707a1 1 0 011.414 1.414l-.707.707a1 1 0 01-1.414-1.414z"></path></svg>
+                    </button>
+                    <div class="relative">
+                        <img class="h-10 w-10 rounded-full object-cover" src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=1780&auto=format&fit=crop" alt="Trainer profile picture">
+                    </div>
+                </div>
+            </header>
+
+            <main class="flex-1 p-6 lg:p-8">
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white dark:bg-primary-900/50 p-8 rounded-xl shadow-lg border dark:border-primary-800">
+                        <form id="profile-form">
+                            <div class="flex items-center justify-between mb-8">
+                                <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Profile Information</h2>
+                                <button type="button" id="edit-profile-btn" class="bg-primary-600 hover:bg-primary-700 text-white px-5 py-2 rounded-lg font-semibold shadow-md text-sm">Edit Profile</button>
+                            </div>
+                            <div class="space-y-6">
+                                <div class="flex items-center space-x-6">
+                                    <img id="profile-picture-preview" class="h-24 w-24 rounded-full object-cover" src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=1780&auto=format&fit=crop" alt="Profile picture">
+                                    <div>
+                                        <label for="profile-picture-upload" class="cursor-pointer text-sm font-medium text-primary-600 dark:text-primary-400 hover:underline">Change Photo</label>
+                                        <input type="file" id="profile-picture-upload" class="hidden" disabled>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="profile-name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Full Name / Organisation</label>
+                                    <input type="text" id="profile-name" value="John Doe" disabled class="mt-1 block w-full px-4 py-3 border border-gray-300 dark:border-primary-700 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 bg-gray-100 dark:bg-primary-800 disabled:opacity-75">
+                                </div>
+                                <div>
+                                    <label for="profile-email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email Address</label>
+                                    <input type="email" id="profile-email" value="john.doe@example.com" disabled class="mt-1 block w-full px-4 py-3 border border-gray-300 dark:border-primary-700 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 bg-gray-100 dark:bg-primary-800 disabled:opacity-75">
+                                </div>
+                                <div>
+                                    <label for="profile-phone" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Phone Number</label>
+                                    <input type="tel" id="profile-phone" value="+234 801 234 5678" disabled class="mt-1 block w-full px-4 py-3 border border-gray-300 dark:border-primary-700 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 bg-gray-100 dark:bg-primary-800 disabled:opacity-75">
+                                </div>
+                                
+                                <!-- Verification Section -->
+                                <div class="pt-6 border-t border-gray-200 dark:border-primary-700">
+                                     <div class="flex items-center justify-between">
+                                        <h3 class="text-lg font-bold text-gray-900 dark:text-white">Verification Status</h3>
+                                        <span id="verification-status" class="px-3 py-1 text-sm font-semibold rounded-full bg-yellow-100 text-yellow-800 dark:bg-yellow-900/50 dark:text-yellow-300">Not Verified</span>
+                                    </div>
+                                    <div id="verification-upload-section" class="mt-4 hidden">
+                                        <label for="verification-document" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Upload Verification Document</label>
+                                        <input type="file" id="verification-document" class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary-50 file:text-primary-700 hover:file:bg-primary-100 dark:file:bg-primary-800 dark:file:text-primary-200 dark:hover:file:bg-primary-700"/>
+                                        <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">Please upload your verification document. Once your account is verified by our team, you will be able to publish trainings on the platform and will receive a "Verified" badge on your public profile.</p>
+                                    </div>
+                                </div>
+
+                                <div id="form-actions" class="hidden pt-4 flex justify-end space-x-4">
+                                    <button type="button" id="cancel-btn" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-5 py-2.5 rounded-lg font-semibold text-sm">Cancel</button>
+                                    <button type="submit" class="bg-secondary-600 hover:bg-secondary-700 text-white px-5 py-2.5 rounded-lg font-semibold shadow-md text-sm">Save Changes</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Theme Toggle Logic ---
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            if (themeToggleBtn) {
+                const darkIcon = document.getElementById('theme-toggle-dark-icon');
+                const lightIcon = document.getElementById('theme-toggle-light-icon');
+                if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    lightIcon.classList.remove('hidden');
+                    document.documentElement.classList.add('dark');
+                } else {
+                    darkIcon.classList.remove('hidden');
+                }
+                themeToggleBtn.addEventListener('click', function() {
+                    darkIcon.classList.toggle('hidden');
+                    lightIcon.classList.toggle('hidden');
+                    document.documentElement.classList.toggle('dark');
+                    const theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+                    localStorage.setItem('color-theme', theme);
+                });
+            }
+
+            // --- Profile Page Logic ---
+            const profileForm = document.getElementById('profile-form');
+            if (profileForm) {
+                const editBtn = document.getElementById('edit-profile-btn');
+                const cancelBtn = document.getElementById('cancel-btn');
+                const formActions = document.getElementById('form-actions');
+                const formInputs = profileForm.querySelectorAll('input, textarea');
+                const fileInput = document.getElementById('profile-picture-upload');
+                const verificationUploadSection = document.getElementById('verification-upload-section');
+
+                const toggleEditMode = (isEditing) => {
+                    formInputs.forEach(input => {
+                        if (input.id !== 'profile-email') { // Don't enable email editing
+                             input.disabled = !isEditing;
+                             input.classList.toggle('bg-gray-100', !isEditing);
+                             input.classList.toggle('dark:bg-primary-800', !isEditing);
+                             input.classList.toggle('bg-white', isEditing);
+                             input.classList.toggle('dark:bg-primary-900', isEditing);
+                        }
+                    });
+                    
+                    if (isEditing) {
+                        editBtn.classList.add('hidden');
+                        formActions.classList.remove('hidden');
+                        verificationUploadSection.classList.remove('hidden');
+                    } else {
+                        editBtn.classList.remove('hidden');
+                        formActions.classList.add('hidden');
+                        verificationUploadSection.classList.add('hidden');
+                    }
+                };
+
+                editBtn.addEventListener('click', () => toggleEditMode(true));
+                cancelBtn.addEventListener('click', () => toggleEditMode(false));
+
+                profileForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    // In a real app, you'd send this data to the backend
+                    alert('Profile updated successfully!');
+                    toggleEditMode(false);
+                });
+
+                fileInput.addEventListener('change', (e) => {
+                    const file = e.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = (event) => {
+                            document.getElementById('profile-picture-preview').src = event.target.result;
+                        }
+                        reader.readAsDataURL(file);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
