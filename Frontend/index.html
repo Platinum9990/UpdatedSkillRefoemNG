@@ -30,6 +30,29 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Translate -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,yo,ha,ig,fr,es,ar,zh-CN,pt,de',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+            
+            // Initialize mobile version as well
+            if (document.getElementById('google_translate_element_mobile')) {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'en',
+                    includedLanguages: 'en,yo,ha,ig,fr,es,ar,zh-CN,pt,de',
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                    autoDisplay: false
+                }, 'google_translate_element_mobile');
+            }
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body class="bg-white text-gray-800 dark:bg-primary-950 dark:text-gray-300 transition-colors duration-300">
 
@@ -58,6 +81,8 @@
                             <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                         </div>
                     </div>
+                    
+                    <div id="google_translate_element" class="border-l dark:border-gray-700 pl-4"></div>
                     
                     <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none rounded-lg text-sm p-2.5">
                         <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -89,6 +114,9 @@
                     <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-700 dark:text-gray-400 mt-4">
                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                     </div>
+                </div>
+                <div class="mt-4 pt-4 border-t dark:border-gray-700">
+                    <div id="google_translate_element_mobile"></div>
                 </div>
             </div>
         </div>
